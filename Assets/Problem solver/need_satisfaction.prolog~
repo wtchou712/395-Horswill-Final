@@ -1,0 +1,10 @@
+character_initialization :-
+   start_task(setup_satisfy_needs, 100).
+
+strategy(satisfy_needs,
+	 begin(satisfy_a_need,
+	       satisfy_needs)).
+
+strategy(setup_satisfy_needs,
+	 begin(call(initialize_last_satisfied_times),
+	       satisfy_needs)).
